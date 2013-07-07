@@ -7,10 +7,10 @@ Gem::Specification.new do |spec|
   spec.name          = "movie-garnish"
   spec.version       = MovieGarnish::VERSION
   spec.authors       = ["cparratto"]
-  spec.email         = ["cparratto@pnmac.com"]
+  spec.email         = ["cparratto@gmail.com"]
   spec.description   = %q{Auto tags movies with imdb meta data.}
   spec.summary       = %q{Combines the atomic-parsley-ruby api with the ruby imdb api}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/cparratto/movie-garnish"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
