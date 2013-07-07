@@ -11,7 +11,7 @@ A command line tool for encoding movies with meta data from imdb
 
    mg-cli imdb --video=~/Desktop/some-movie.mp4 --title="Movie Title"
 
-   # or if the video file is properly names
+   # or if the video file is properly named
 
    mg-cli imdb --video=~/Desktop/some-movie.mp4
 
