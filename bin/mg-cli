@@ -28,6 +28,7 @@ class MGCLI < Thor
       }
 
       media = AtomicParsleyRuby::Media.new(File.expand_path(options[:video]))
+      media.overwrite overwrite
 
       media.encode do |config|
         config.title movie.title
@@ -35,7 +36,6 @@ class MGCLI < Thor
         config.artist movie.cast_members.join(", ")
         config.description movie.plot
         config.artwork img_name
-        config.overwrite overwrite
       end
 
     end
