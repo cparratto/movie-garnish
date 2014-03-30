@@ -6,8 +6,10 @@ require 'imdb'
 class MGCLI < Thor
   desc "imdb", "Encodes video with attributes from imdb."
   method_option :video, :type => :string, :required => true
+  method_option :overwrite, :type => :boolean, :required => false, :default =>true
   method_option :title, :type => :string, :required => false
   def imdb
+    overwrite = options[:overwrite]
     search_term = options[:title]
     search_term ||= File.basename(options[:video], ".*")
 
@@ -29,11 +31,11 @@ class MGCLI < Thor
 
       media.encode do |config|
         config.title movie.title
-        #config.year DateTime.parse(movie.release_date).year
         config.genre movie.genres.first
         config.artist movie.cast_members.join(", ")
         config.description movie.plot
         config.artwork img_name
+        config.overwrite overwrite
       end
 
     end
